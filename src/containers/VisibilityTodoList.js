@@ -4,16 +4,15 @@ import TodoList from '../components/TodoList';
 
 
 function getVisibleTodos(todos, filter){
-    return todos;
+    return todos.todos;
 }
 
 function mapStateToProps(state){
+    console.log(state);
     return {
         todos:getVisibleTodos(state.todos, state.visibilityFilter)
     };
 }
-
-
 
 function mapDisptachToProps(dispatch){
     return {

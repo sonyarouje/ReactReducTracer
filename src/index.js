@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import todoApp from './reducers';
 
-let store= createStore(todoApp);
+const storeEnhancer = window['devToolsExtension'] ? window['devToolsExtension']() : value => value;
+let store= createStore(todoApp,storeEnhancer);
 
 ReactDOM.render(
   <Provider store={store}>  

@@ -5,6 +5,7 @@ import './App.css';
 // import Todo from './components/Todo';
 import AddTodo from './containers/AddTodo';
 import VisibilityTodoList from './containers/VisibilityTodoList';
+import TodoPair from './containers/TodoListGroup';
 
 class App extends Component {
   render() {
@@ -14,12 +15,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          
-          
-        </p>
+
+        <span>General todo</span>
         <AddTodo></AddTodo>
+        
         <VisibilityTodoList></VisibilityTodoList>
+        <TodoPair></TodoPair>
       </div>
     );
   }

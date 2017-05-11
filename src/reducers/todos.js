@@ -1,21 +1,28 @@
 import todo from './todo';
 
-export const initState={
-    todos:[]
-}
+export interface TodosState {
+  todos: any[]
+};
 
-function todos(state=[], action){
+export const initialState : TodosState = {
+  todos: []
+};
+
+function todos(state=initialState, action){
     switch(action.type){
         case 'ADD_TODO':
-            return [
-                ...state,
-                todo(undefined, action)
-            ];
-
+            console.log(state);
+            return Object.assign({}, state,{
+                todos:[
+                    ...state.todos,
+                    todo(undefined, action)
+                ]
+            });
         case 'TOGGLE_TODO':
-            return state.map(t=> 
-                todo(t,action) 
-            );
+            return Object.assign({}, state,{
+                todos: state.todos.map(t=> todo(t,action))
+            });
+            
         default:
             return state;
     }
