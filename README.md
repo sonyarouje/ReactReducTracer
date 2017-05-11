@@ -4,4 +4,4 @@
 3. npm install
 4. npm start
 
-Here you can find the details of this project http://redux.js.org/docs/basics/UsageWithReact.html
+I just used the code from the e.g. here http://redux.js.org/docs/basics/UsageWithReact.html and formatted to use explicit functions than arrow functions.
