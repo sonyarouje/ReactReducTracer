@@ -29,9 +29,10 @@ function TodoPair(props){
                 selector={personalSelector}
                 wrapper={personalWrapper}            
             />
+            {/*you can also refer state and wrapper as shown below.*/}
             <TodoGroup
-                selector={personalSelector}
-                wrapper={personalWrapper}>
+                selector={(state)=>state.todosGroup.personalTodo}
+                wrapper={(type)=>`personal.${type}`}>
             </TodoGroup>
 
             <span>Official</span>
